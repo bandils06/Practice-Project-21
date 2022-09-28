@@ -7,63 +7,70 @@ public class Fill_Form {
 
 	public static void main(String[] args) {
 
-		System.setProperty("webdriver.chrome.driver", "E:\\\\phase5-lib\\\\chromedriver_win32\\\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\phase5-lib\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://profile.oracle.com/myprofile/account/create-account.jspx");
 		driver.manage().window().maximize();
 		
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		//email id
 		WebElement email_id = driver.findElement(By.id("sView1:r1:0:email::content"));
 		email_id.sendKeys("akdjfosh@gmail.com");
 		
-//		try {
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
+		//password
 		WebElement pass = driver.findElement(By.name("sView1:r1:0:password"));
-		pass.sendKeys("1A23@45678");
+		pass.sendKeys("AtoZ@1to9");
 		
+		//retype password
 		WebElement rePass = driver.findElement(By.name("sView1:r1:0:retypePassword"));
-		rePass.sendKeys("1A23@45678");
+		rePass.sendKeys("AtoZ@1to9");
 		
+		//country
 		WebElement con = driver.findElement(By.name("sView1:r1:0:country"));
-		rePass.sendKeys("India");
+		con.sendKeys("India");
 		
+		//first name
 		WebElement fname= driver.findElement(By.name("sView1:r1:0:firstName"));
 		fname.sendKeys("ABCD");
 		
+		//last name
 		WebElement lname= driver.findElement(By.name("sView1:r1:0:lastName"));
 		lname.sendKeys("EFGH");
 		
+		//job title
 		WebElement jtitle= driver.findElement(By.id("sView1:r1:0:jobTitle::content"));
 		jtitle.sendKeys("FSD");
 		
+		//phone number
 		WebElement ph= driver.findElement(By.id("sView1:r1:0:workPhone::content"));
 		ph.sendKeys("9876543210");
 		
+		//company name
 		WebElement cName= driver.findElement(By.id("sView1:r1:0:companyName::content"));
 		cName.sendKeys("ABC Ltd.");
 		
+		//address
 		WebElement add= driver.findElement(By.name("sView1:r1:0:address1"));
 		add.sendKeys("2A EFD Ltd.");
 		
+		//city
 		WebElement city= driver.findElement(By.id("sView1:r1:0:city::content"));
 		city.sendKeys("Delhi");
 		
+		//state
 		WebElement state= driver.findElement(By.id("sView1:r1:0:state::content"));
 		state.sendKeys("Uttar Pradesh");
 		
+		//postal code
 		WebElement postal= driver.findElement(By.id("sView1:r1:0:postalCode::content"));
 		postal.sendKeys("987654");
+		
+		System.out.println("Automation Complete...");
 
 	}
 
